@@ -50,8 +50,8 @@ public abstract class JBPM6BaseTest extends SWTBotTestCase {
 	
 	protected String diagramFileLocation;
 	
-	protected static final String VARIABLE1 = "Property_1";
-	protected static final String VARIABLE2 = "Property_2";
+	protected static final String VARIABLE1 = "VarOne";
+	protected static final String VARIABLE2 = "VarTwo";
 	
 	/**
 	 * 
@@ -96,7 +96,7 @@ public abstract class JBPM6BaseTest extends SWTBotTestCase {
 			openProcessFile();
 			buildProcessModel();
 			validateProcessModel();
-			runProcessModel();
+//			runProcessModel();
 		} catch (RuntimeException e) {
 			captureScreenshotWithDescription("screenshot-error-process");
 			throw e;
@@ -131,12 +131,14 @@ public abstract class JBPM6BaseTest extends SWTBotTestCase {
 		/*
 		 * Validate using jBPM.
 		 */
+		
 		log.info("Validating '" + editor.getTitle() + "':");
 		JBPM6Validator validator = new JBPM6Validator();
 		diagramSourceCode = editor.validateSourceText();
 		boolean result = validator.validate(diagramSourceCode);
 		log.info("\tjBPM validation result '" + (result ? "valid" : "not valid") + "'");
 		Assert.assertTrue(validator.getResultMessage(), result);
+		
 		/*
 		 * Make sure there are no problems in the problems view.
 		 */

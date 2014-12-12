@@ -14,7 +14,7 @@
 	<properties>
 		<droolsjbpm.site>https://repository.jboss.org/nexus/content/groups/public-jboss/</droolsjbpm.site>
 		<systemProperties>${integrationTestsSystemProperties} -Dswtbot.test.skip=false -Dtest.configurations.dir=resources/</systemProperties>
-		<droolsjbpm.version>6.1.0.Final</droolsjbpm.version>
+		<droolsjbpm.version>6.2.0.CR3</droolsjbpm.version>
 		<awt.robot>false</awt.robot>
 		<bpmn.validation>false</bpmn.validation>
 		<test.class>AllEditorTests</test.class>
@@ -125,12 +125,12 @@
 				<dependency>
 				  <type>p2-installable-unit</type>
 				  <artifactId>org.jbpm.eclipse.feature.feature.group</artifactId>
-				  <version>6.1.0.Final</version>
+				  <version>${droolsjbpm.version}</version>
 				</dependency>
 				<dependency>
 				  <type>p2-installable-unit</type>
 				  <artifactId>org.drools.eclipse.feature.feature.group</artifactId>
-				  <version>6.1.0.Final</version>
+				  <version>${droolsjbpm.version}</version>
 				</dependency>
 				
 				<!-- This entry should enable creating of default JDK on Mac -->
