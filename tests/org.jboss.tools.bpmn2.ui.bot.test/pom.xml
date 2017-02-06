@@ -282,5 +282,12 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
+	<profiles>
+		<profile>
+			<id>proxy</id>
+			<properties>
+				<customization.file>resources/settings/plugin_customization_with_proxy_settings.ini</customization.file>
+			</properties>
+		</profile>
+	</profiles>
 </project>
